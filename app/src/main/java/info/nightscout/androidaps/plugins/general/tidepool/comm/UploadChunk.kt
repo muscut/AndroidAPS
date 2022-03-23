@@ -112,7 +112,7 @@ class UploadChunk @Inject constructor(
         val result = LinkedList<BaseElement>()
         repository.getBolusesDataFromTimeToTime(start, end, true)
             .blockingGet()
-            .forEach {  bolus ->
+            .forEach { bolus ->
                 result.add(BolusElement(bolus, dateUtil))
             }
         repository.getCarbsDataFromTimeToTimeExpanded(start, end, true)
